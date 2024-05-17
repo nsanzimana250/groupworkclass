@@ -1,0 +1,228 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
+}
+body, .container{
+  width: 100%;
+  height: 100vh;
+  background-color:  #5d6d7e ;
+  display: flex;
+  gap: 10px;
+  color: rgb(202, 202, 202);
+}
+.container .left_side{
+  width: 15%;
+  box-shadow: 0px 5px 15px rgb(202, 202, 202);
+}
+.container .left_side nav{
+  margin-top: 20%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}.container .left_side nav ul li{
+  margin-top: 10px;
+  padding: 10px;
+}
+.container .left_side nav ul li a{
+  color:  #0492eb
+  ;
+  font-size: 20px;
+}
+.container .left_side nav ul li a::after{
+  content: "";
+  width: 0px;
+  background-color:  #0492eb;
+  height: 3px;
+  left: 0;
+  position: relative;
+  transition: 0.4s;
+  position: absolute;
+  margin-top: 20px;
+}
+.container .left_side nav ul li a:hover::after{
+  width: 210px;
+}
+.right_side{
+  width: 85%;
+  display: block;
+  background-color: #7fb3d5;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.right_side header{
+  width: 100%;
+  background-color: #0492eb;
+  padding: 10px 0px 10px 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: rgb(202, 202, 202);
+}
+.right_side .collecion_cord{
+  background-color:  #7fb3d5 ;
+  width: 100%;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.right_side .collecion_cord .cord{
+  width: 300px;
+  height: 100px;
+  background-color:  #0492eb;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  color: rgb(202, 202, 202);
+}
+.right_side .form{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cdd8e0;
+  border: 1px solid #cdd8e0;
+  padding: 10px 0px 10px 0px;
+  border-radius: 20px;
+}
+.right_side .form form{
+  width: 100%;
+  flex-direction: column;
+}
+.top,.middle, .under, .status, .button{
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  gap: 5px;
+}
+.input{
+  width: 300px;
+  padding: 5px;
+  outline: none;
+  background: transparent;
+  border-width: 0px 0px 2px 0px;
+  border-color: #0492eb;
+}
+.textarea{
+  width: 400px;
+  padding: 10px;
+  height: 40px;
+  outline: none;
+  background: transparent;
+  border-width: 0px 0px 2px 0px;
+  border-color: #0492eb;
+}
+select{
+  width: 300px;
+  outline: none;
+  height: 40px;
+  background: transparent;
+  border-width: 0px 0px 2px 0px;
+  border-color: #0492eb;
+}
+button{
+  padding: 10px 40px ;
+  color: white;
+  font-weight: bold;
+  background-color: #0492eb;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.right_side .table{
+  width: 98%;
+  background-color: #cdd8e0;
+  margin-top: 2%;
+  height: 53vh;
+  overflow-y: scroll;
+}
+.right_side .table table{
+  width: 100%;
+  border-collapse: collapse;
+  border-color: #7fb3d5;
+  color: grey;
+  
+}
+.right_side .table table tr th{
+  border-collapse: collapse;
+  padding: 10px;
+  border-color: #7fb3d5;
+}
+.right_side .table table tr td{
+  border-collapse: collapse;
+  padding: 5px;
+  border-color: #7fb3d5;
+}
+.table2{
+  width: 98%;
+  background-color: #cdd8e0;
+  margin-top: 2%;
+  height: 70vh;
+  overflow-y: scroll;
+}
+.right_side .table2 table{
+  width: 100%;
+  border-collapse: collapse;
+  border-color: #7fb3d5;
+  color: grey;
+}
+.right_side .table2 table tr th{
+  border-collapse: collapse;
+  padding: 10px;
+  border-color: #7fb3d5;
+  color: grey;
+}
+.right_side .table2 table tr td{
+  border-collapse: collapse;
+  padding: 5px;
+  border-color: #7fb3d5;
+  color: grey;
+}
+.d {
+  color: brown;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+ .u {
+  color: green;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+.nothing{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #7fb3d5;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nothing .comelet{
+  width: 200px;
+  padding: 10px;
+  box-shadow: 1px 3px 6px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+}
+label{
+  color: #519aca;
+}
+
+
