@@ -1,53 +1,4 @@
-<?php
-session_start();
-if (!empty($_SESSION['username'])) {
-    header("location:./user_panel/user_panel.php");
-  }
-if (!empty($_SESSION['admin'])) {
-    header("location:./Admin_panel/admin_panel.php");
-  }  
-$conn=new mysqli("localhost","root","","groupworkclass");
-$error=array();
-$username=$email=$password=$cpassword="";
-if (isset($_POST['signup'])) {
-    $username=$_POST['username'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $cpassword=$_POST['cpassword'];
-    $pass=password_hash($password, PASSWORD_DEFAULT);
-    $usernamecheck=$conn->query("SELECT * FROM `users` WHERE `username`='$username'");
-    $emailcheck=$conn->query("SELECT * FROM `users` WHERE `email`='$email'");
-    if ($usernamecheck==true) {
-        $result=$usernamecheck->fetch_assoc();
-        if ($result==true) {
-            array_push($error,"username aleady taken  ");
-        }
-    }
-    if ($emailcheck==true) {
-        $result=$emailcheck->fetch_assoc();
-        if ($result==true) {
-            array_push($error," email aleady taken ");
-        }
-    }
-    if (strlen($password)<6) {
-        array_push($error,"password must be 6 or more characters  ");
-    }
-    if ($password!=$cpassword) {
-        array_push($error,"password not much ");
-    }
-    if (count($error)>0) {
-        foreach ($error as $key) {
-            echo" 
-            <script>alert('$key')</script>
-            ";
-        }
-    }
-    else{
-        $emailcheck=$conn->query("INSERT INTO `users`(`username`, `email`, `password`) VALUES ('$username','$email','$pass')");
-        header("location: ./index.php");
-    }
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +14,55 @@ if (isset($_POST['signup'])) {
         <h2>TRACKING  MANAGEMENT SYSTEMANA</h2>
         <h3>:: signup Form ::</h3>
     </header>
-    <div class='php'>   
+    <div class='php'> 
+    <?php
+            session_start();
+            if (!empty($_SESSION['username'])) {
+                header("location:./user_panel/user_panel.php");
+            }
+            if (!empty($_SESSION['admin'])) {
+                header("location:./Admin_panel/admin_panel.php");
+            }  
+            $conn=new mysqli("localhost","root","","groupworkclass");
+            $error=array();
+            $username=$email=$password=$cpassword="";
+            if (isset($_POST['signup'])) {
+                $username=$_POST['username'];
+                $email=$_POST['email'];
+                $password=$_POST['password'];
+                $cpassword=$_POST['cpassword'];
+                $pass=password_hash($password, PASSWORD_DEFAULT);
+                $usernamecheck=$conn->query("SELECT * FROM `users` WHERE `username`='$username'");
+                $emailcheck=$conn->query("SELECT * FROM `users` WHERE `email`='$email'");
+                if ($usernamecheck==true) {
+                    $result=$usernamecheck->fetch_assoc();
+                    if ($result==true) {
+                        array_push($error,"username aleady taken  ");
+                    }
+                }
+                if ($emailcheck==true) {
+                    $result=$emailcheck->fetch_assoc();
+                    if ($result==true) {
+                        array_push($error," email aleady taken ");
+                    }
+                }
+                if (strlen($password)<6) {
+                    array_push($error,"password must be 6 or more characters  ");
+                }
+                if ($password!=$cpassword) {
+                    array_push($error,"password not much ");
+                }
+                if (count($error)>0) {
+                    foreach ($error as $key) {
+                        echo $key ."<br>" ;
+                    }
+                }
+                else{
+                    $emailcheck=$conn->query("INSERT INTO `users`(`username`, `email`, `password`) VALUES ('$username','$email','$pass')");
+                    header("location: ./index.php");
+                }
+            }
+?>
     </div>
     <div class="form">
     <h2>signup form</h2>

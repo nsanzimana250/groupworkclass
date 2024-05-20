@@ -8,7 +8,8 @@ $conn=new mysqli("localhost","root","","groupworkclass");
   if (isset($_POST['send'])) {
   $task=$_POST['task'];
   $complet=$_POST['complet'];
-  $sql=$conn->query("INSERT INTO `comment`(`task_id`, `comment`) VALUES ('$task','$complet')");
+  $message=$_POST['message'];
+  $sql=$conn->query("INSERT INTO `comment`(`task_id`, `comment`, `message`) VALUES ('$task','$complet','$message')");
   if ($sql==true) {
   echo" <script>alert('thank you')</script>";
   }
@@ -31,10 +32,10 @@ $conn=new mysqli("localhost","root","","groupworkclass");
     }
     form h2{
       color: grey;
-    }
-    input{
-      transform: scale(2.1);
-      margin-left: 10px;
+    }textarea{
+      outline: none;
+      justify-content: center;
+      padding: 10px;
     }
   </style>
 </head>
@@ -43,6 +44,7 @@ $conn=new mysqli("localhost","root","","groupworkclass");
     <div class="left_side">
       <nav>
         <ul>
+        <div class="user">TMS</div>
           <li><a href="./user_panel.php">Home</a></li>
           <li><a href="./view_task.php">view_task</a></li>
           <li><a href="./logout.php">Logout</a></li>
@@ -87,22 +89,30 @@ $conn=new mysqli("localhost","root","","groupworkclass");
       </table>
 
       </div>
-     
-      <form  method="post">
-        <h2>if your project is done submit</h2>
+     <div class="message">
+     <form  method="post">
+        <h5>send message to Admin</h5>
+        <textarea name="message" id="" placeholder="message"></textarea>
         <select name="task" id="">
           <option value="">select project</option>
          
           <?php 
-          $sql=$conn->query("SELECT * FROM `tasks`");
+          $sql=$conn->query("SELECT * FROM `tasks` WHERE tasks.assigned_to='$id'");
           while($row=$sql->fetch_array()){ ?>
           <option value="<?php echo $row[0] ?>"><?php echo $row[1] ?></option>
         <?php  }
           ?>
         </select>
-        <input type="checkbox" value="complete"  name="complet" >  complet
+        <select name="complet" id="">
+          <option value="none">select stastus</option>
+          <option value="complete">complete</option>
+          <option value="pending">pending</option>
+        </select>
         <button type="submit" name="send" >send</button>
       </form>
+
+     </div>
+     
     </div>
   </div>
 </body>

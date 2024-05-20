@@ -19,6 +19,7 @@ $conn=new mysqli("localhost","root","","groupworkclass");
     <div class="left_side">
       <nav>
         <ul>
+        <div class="user">TMS</div>
           <li><a href="./user_panel.php">Home</a></li>
           <li><a href="./view_task.php">view_task</a></li>
           <li><a href="./logout.php">Logout</a></li>
@@ -52,6 +53,19 @@ $conn=new mysqli("localhost","root","","groupworkclass");
              ?>
           </h2>
           <h3>number of task</h3>
+        </div>
+        <div class="cord">
+        <h3>user info</h3>
+          <h2>
+          <?php
+           $id=$_SESSION['id'];
+            $sql=$conn->query("SELECT * FROM `users` WHERE `id`=$id;");
+            $result=mysqli_fetch_array($sql);
+            echo $result['1'] ."<br>";
+            echo $result['2'] ."<br>";
+             ?>
+          </h2>
+          
         </div>
 
 

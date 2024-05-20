@@ -71,9 +71,11 @@ if (isset($_GET['delete'])) {
     <div class="left_side">
       <nav>
         <ul>
+        <div class="user">TMS</div>
         <li><a href="./admin_panel.php">Admin</a></li>
           <li><a href="./user_list.php">user list</a></li>
           <li><a href="./add_task.php">add_task</a></li>
+          <li><a href="./respond.php">message</a></li>
           <li><a href="./report.php">Report</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>

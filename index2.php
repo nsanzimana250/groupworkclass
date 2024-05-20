@@ -1,25 +1,4 @@
-<?php
-session_start();
-if (!empty($_SESSION['admin'])) {
-    header("location:./Admin_panel/admin_panel.php");
-  }
-if (!empty($_SESSION['username'])) {
-    header("location:./user_panel/user_panel.php");
-  }
-$user="Admin";
-$pass="Admin";
-if (isset($_POST['login'])) {
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    if ($pass==$password && $user==$username) {
-        $_SESSION['admin']='Admin';
-        header("location:./Admin_panel/admin_panel.php");
-    }
-    else{
-        echo"<script> alert('You Are not Admin')</script>   ";
-       }  
-}    
- ?>   
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +12,31 @@ if (isset($_POST['login'])) {
         <h2>TRACKING MANAGEMENT SYSTEM</h2>
         <h3>:: Login Form for Admin ::</h3>
     </header>
+    <div class="php">
+    <?php
+        session_start();
+        if (!empty($_SESSION['admin'])) {
+            header("location:./Admin_panel/admin_panel.php");
+        }
+        if (!empty($_SESSION['username'])) {
+            header("location:./user_panel/user_panel.php");
+        }
+        $user="Admin";
+        $pass="Admin";
+        if (isset($_POST['login'])) {
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            if ($pass==$password && $user==$username) {
+                $_SESSION['admin']='Admin';
+                header("location:./Admin_panel/admin_panel.php");
+            }
+            else{
+                echo"<script> alert('You Are not Admin')</script>   ";
+            }  
+        }    
+ ?>  
+
+    </div>
     <div class="form">
         <h2>login form</h2>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">

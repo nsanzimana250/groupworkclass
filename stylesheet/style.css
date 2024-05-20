@@ -3,12 +3,11 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  color: rgb(202, 202, 202);
 }
 body{
   width: 100%;
   height: 100vh;
-  background-color:  #5d6d7e ;
+  background-color:  white;
   display: block;
 }
 header{
@@ -18,9 +17,10 @@ header{
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: #0492eb;
-  color: rgb(202, 202, 202);
+  background-color: white;
+  color: #0492eb;
   text-transform: capitalize;
+  box-shadow:0px 3px 6px  #b8e4ff;
 }
 .form{
   width: 100%;
@@ -68,4 +68,14 @@ header{
 a{
   color: rgb(0, 183, 255);
   text-transform: capitalize;
+}
+.php{
+  width: 100%;
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(240, 96, 96);
+  font-weight: bolder;
+  margin-top: 1%;
 }

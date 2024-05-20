@@ -1,33 +1,4 @@
-<?php
-session_start();
-if (!empty($_SESSION['username'])) {
-    header("location:./user_panel/user_panel.php");
-  }
-if (!empty($_SESSION['admin'])) {
-    header("location:./Admin_panel/admin_panel.php");
-  }
-$conn=new mysqli("localhost","root","","groupworkclass");
-$username=$email=$password=$cpassword="";
-if (isset($_POST['login'])) {
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $sql=$conn->query("SELECT * FROM `users` WHERE `username`='$username'");
-    $result=$sql->fetch_assoc();
-    if ($result) {
-        if (password_verify($password, $result['password'])) {
-                    $_SESSION['id']=$result['id'];
-                    $_SESSION['username']=$result['username'];
-                    header("location:./user_panel/user_panel.php");
-                }
-                else{
-                            echo"<script>alert(' Worng  Password ')</script>   ";
-                        } 
-            }
-        else{
-           echo"<script> alert(' Worng  Username ')</script>   ";
-          }
-}    
- ?>   
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +12,39 @@ if (isset($_POST['login'])) {
         <h2>TRACKING MANAGEMENT SYSTEM</h2>
         <h3>:: Login Form for user ::</h3>
     </header>
+    <div class="php">
+    <?php
+        session_start();
+        if (!empty($_SESSION['username'])) {
+            header("location:./user_panel/user_panel.php");
+        }
+        if (!empty($_SESSION['admin'])) {
+            header("location:./Admin_panel/admin_panel.php");
+        }
+        $conn=new mysqli("localhost","root","","groupworkclass");
+        $username=$email=$password=$cpassword="";
+        if (isset($_POST['login'])) {
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            $sql=$conn->query("SELECT * FROM `users` WHERE `username`='$username'");
+            $result=$sql->fetch_assoc();
+            if ($result) {
+                if (password_verify($password, $result['password'])) {
+                            $_SESSION['id']=$result['id'];
+                            $_SESSION['username']=$result['username'];
+                            header("location:./user_panel/user_panel.php");
+                        }
+                        else{
+                                    echo" Worng  Password ";
+                                } 
+                    }
+                else{
+                echo"Worng  Username ";
+                }
+        }    
+ ?>   
+
+    </div>
     <div class="form">
         <h2>login if you are user</h2>
 

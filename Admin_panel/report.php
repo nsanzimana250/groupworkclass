@@ -29,9 +29,11 @@ if (isset($_GET['detele'])) {
     <div class="left_side">
       <nav>
         <ul>
+        <div class="user">TMS</div>
         <li><a href="./admin_panel.php">Admin</a></li>
         <li><a href="./user_list.php">user list</a></li>
           <li><a href="./add_task.php">add_task</a></li>
+          <li><a href="./respond.php">message</a></li>
           <li><a href="./report.php">Report</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
@@ -102,19 +104,37 @@ if (isset($_GET['detele'])) {
 
       </table>
       <?php else: ?>
-        <div class="nothing" >
-          <?php
-          $sql=$conn->query("SELECT * FROM `comment` INNER JOIN tasks WHERE comment.task_id=tasks.id");
-          while ($data=$sql->fetch_array()) { ?>
-            <div class="comelet">
-              <h2>prject tile:</h2>
-              <p><?php echo $data["title"] ?></p>
-              <h3>status:</h3>
-              <p><?php echo $data["comment"] ?></p>
-              <a href="?detele=<?php echo $data[0] ?>">delete</a>
-            </div>
-      <?php    }    ?>
-        </div>
+        <div class="table">
+      <table border="1">
+        <tr>
+          <th>0N</th>
+          <th>title</th>
+          <th>deadline</th>
+          <th>date</th>
+          <th>assigned_to</th>
+          <th>status</th>
+          <th>description</th>
+          <th>tasks</th>
+        </tr>
+        <?php
+            $sql=$conn->query("SELECT * FROM `tasks` INNER JOIN users WHERE tasks.assigned_to=users.id");
+            $num=1;
+            while ($row=$sql->fetch_array()) { ?>
+            <tr>
+            <td><?php echo $num=1;; ?></td>
+              <td><?php echo $row[1]; ?></td>
+              <td><?php echo $row[3]; ?></td>
+              <td><?php echo $row[6]; ?></td>
+              <td><?php echo $row["username"]; ?></td>
+              <td><?php echo $row[4]; ?></td>
+              <td><?php echo $row[2]; ?></td>
+              <td><?php echo $row[7]; ?></td>
+            </tr>
+              <option value=""></option>
+            <?php $num++; }  ?>
+      </table>
+
+      </div>
         <?php endif; ?>
 
       </div>

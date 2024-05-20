@@ -8,14 +8,14 @@
 body, .container{
   width: 100%;
   height: 100vh;
-  background-color:  #5d6d7e ;
+  background-color:  white ;
   display: flex;
   gap: 10px;
   color: rgb(202, 202, 202);
 }
 .container .left_side{
   width: 15%;
-  box-shadow: 0px 5px 15px rgb(202, 202, 202);
+  box-shadow: 0px 2px 6px #0492eb;
 }
 .container .left_side nav{
   margin-top: 20%;
@@ -25,48 +25,41 @@ body, .container{
 }.container .left_side nav ul li{
   margin-top: 10px;
   padding: 10px;
+  width: 100%;
 }
 .container .left_side nav ul li a{
-  color:  #0492eb
-  ;
+  color:  #0492eb;
   font-size: 20px;
-}
-.container .left_side nav ul li a::after{
-  content: "";
-  width: 0px;
-  background-color:  #0492eb;
-  height: 3px;
-  left: 0;
-  position: relative;
   transition: 0.4s;
-  position: absolute;
-  margin-top: 20px;
 }
-.container .left_side nav ul li a:hover::after{
-  width: 210px;
+.container .left_side nav ul li a:hover{
+  color: #81868a;
+  text-decoration: underline;
 }
 .right_side{
   width: 85%;
   display: block;
-  background-color: #7fb3d5;
+  background-color: white;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 .right_side header{
   width: 100%;
-  background-color: #0492eb;
-  padding: 10px 0px 10px 0px;
+  padding: 20px 0px 20px 0px;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  color: rgb(202, 202, 202);
+  background-color: white;
+  color: #0492eb;
+  text-transform: capitalize;
+  box-shadow:0px 3px 6px  #b8e4ff;
 }
 .right_side .collecion_cord{
-  background-color:  #7fb3d5 ;
+  background-color:  #e1e6eb ;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -74,25 +67,23 @@ body, .container{
 }
 .right_side .collecion_cord .cord{
   width: 300px;
-  height: 100px;
-  background-color:  #0492eb;
+  height: 200px;
+  background-color:  #81868a;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  color: rgb(202, 202, 202);
+  color: rgb(255, 255, 255);
 }
 .right_side .form{
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #cdd8e0;
-  border: 1px solid #cdd8e0;
+  background-color: #eaeef1;
   padding: 10px 0px 10px 0px;
-  border-radius: 20px;
 }
 .right_side .form form{
   width: 100%;
@@ -109,7 +100,7 @@ body, .container{
   padding: 5px;
   outline: none;
   background: transparent;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0px 0px 1px 1px;
   border-color: #0492eb;
 }
 .textarea{
@@ -118,7 +109,7 @@ body, .container{
   height: 40px;
   outline: none;
   background: transparent;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0px 0px 1px 1px;
   border-color: #0492eb;
 }
 select{
@@ -126,7 +117,7 @@ select{
   outline: none;
   height: 40px;
   background: transparent;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0px 0px 1px 1px;
   border-color: #0492eb;
 }
 button{
@@ -140,7 +131,7 @@ button{
 }
 .right_side .table{
   width: 98%;
-  background-color: #cdd8e0;
+  background-color: #f3f6f8;
   margin-top: 2%;
   height: 53vh;
   overflow-y: scroll;
@@ -157,16 +148,25 @@ button{
   padding: 10px;
   border-color: #7fb3d5;
 }
+.right_side .table table tr:nth-child(odd){
+  background-color: white;
+  color: #81868a;
+  border: none;
+}
+
 .right_side .table table tr td{
   border-collapse: collapse;
   padding: 5px;
   border-color: #7fb3d5;
 }
-.table2{
+
+
+
+.right_side .table2{
   width: 98%;
-  background-color: #cdd8e0;
+  background-color: #f3f6f8;
   margin-top: 2%;
-  height: 70vh;
+  height: 53vh;
   overflow-y: scroll;
 }
 .right_side .table2 table{
@@ -174,18 +174,23 @@ button{
   border-collapse: collapse;
   border-color: #7fb3d5;
   color: grey;
+  
 }
 .right_side .table2 table tr th{
   border-collapse: collapse;
   padding: 10px;
   border-color: #7fb3d5;
-  color: grey;
 }
+.right_side .table2 table tr:nth-child(odd){
+  background-color: white;
+  color: #81868a;
+  border: none;
+}
+
 .right_side .table2 table tr td{
   border-collapse: collapse;
   padding: 5px;
   border-color: #7fb3d5;
-  color: grey;
 }
 .d {
   color: brown;
@@ -224,5 +229,23 @@ button{
 label{
   color: #519aca;
 }
-
+.message{
+  width: 100%;
+  background-color: #cccccc;
+  height: 20vh;
+  margin-top: 1%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.user{
+  width: 100px;
+  height: 100px;
+  background-color: #81868a;
+  border-radius: 50%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
