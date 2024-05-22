@@ -48,6 +48,7 @@ if (isset($_GET['detele'])) {
       <div class="form">
         <form action="" method="POST">
         <div class="under">
+          <label for="date">select date </label>
           <select name="date">
             <option>SELECT DATE</option>
             <?php

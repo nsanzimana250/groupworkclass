@@ -63,6 +63,8 @@ body, .container{
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
   gap: 10px;
 }
 .right_side .collecion_cord .cord{

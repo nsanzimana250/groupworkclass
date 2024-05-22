@@ -12,7 +12,7 @@ if (isset($_POST['search'])) {
 if (isset($_GET['detele'])) {
   $id=$_GET['detele'];
   $sql=$conn->query("DELETE FROM `comment` WHERE `task_id`=$id");
-  header("location: report.php");
+  header("location: respond.php");
 }
 ?>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ if (isset($_GET['detele'])) {
     <!-- secand part -->
     <div class="right_side">
       <header>
-        <h2>welcame admin this is report page</h2>
+        <h2>welcame admin this is message from user response</h2>
         <h2><?php echo $_SESSION['admin'];?> </h2>
       </header>
       <div class="collecion_cord">

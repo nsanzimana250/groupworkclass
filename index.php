@@ -53,7 +53,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" name="login" >Login</button>
             <p>if you don't have an account <a href="./create.php">create it now</a> </p>
-            <p>if you are admin  <a href="./index2.php">login us admin</a> </p>
+            <p>if you are admin  <a href="./index2.php">login As admin</a> </p>
         </form>
     </div>
 </body>
